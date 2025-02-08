@@ -4,7 +4,7 @@ import { LoginForm } from "../LoginForm";
 import { RegisterForm } from "../RegisterForm";
 export default function TabsForm() {
   return (
-    <Tabs defaultValue="singin" className="w-[400px]">
+    <Tabs defaultValue="singin" className=" w-[370px] md:w-[400px]">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="singin">Sign in</TabsTrigger>
         <TabsTrigger value="singup">Sign up</TabsTrigger>

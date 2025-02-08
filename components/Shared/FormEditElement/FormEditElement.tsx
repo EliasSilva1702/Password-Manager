@@ -32,6 +32,7 @@ import { toast } from "@/hooks/use-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { formSchema } from "./FormEditElement.form";
+import { Label } from "@/components/ui/label";
 
 export function FormEditElement(props: FormEditElementProps) {
   const { dataElement } = props;
@@ -79,6 +80,7 @@ export function FormEditElement(props: FormEditElementProps) {
     form.setValue("urlWebsite", window.location.href);
   };
   return (
+    <div className="">
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
@@ -214,14 +216,17 @@ export function FormEditElement(props: FormEditElementProps) {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="flex justify-between">
-                Password
-                <Shuffle
-                  className="cursor-pointer"
-                  size={15}
-                  onClick={generateRandomPassword}
-                />
-              </FormLabel>
+              <FormLabel className="flex justify-between items-center my-2">
+                  Password
+                  <Label className="cursor-pointer flex items-center gap-2 mx-1 bg-slate-200 px-2 py-1 rounded-md"
+                    onClick={generateRandomPassword}
+                  >Generate password
+                  <Shuffle
+                    className="cursor-pointer"
+                    size={15}
+                  />
+                  </Label>
+                  </FormLabel>
               <FormControl>
                 <div className="relative">
                   <Input
@@ -273,5 +278,6 @@ export function FormEditElement(props: FormEditElementProps) {
         <Button type="submit">Save</Button>
       </form>
     </Form>
+    </div>
   );
 }

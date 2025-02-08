@@ -38,7 +38,7 @@ export default function HeaderMain(props: HeaderMainProps) {
       <h1 className="text-xl md:text-3xl font-semibold">All safes</h1>
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DropdownMenu open={openDropdown} onOpenChange={setOpenDropdown}>
-          <DropdownMenuTrigger asChild>
+          <DropdownMenuTrigger asChild className="mr-3">
             <Button>
               New <ChevronDown />
             </Button>

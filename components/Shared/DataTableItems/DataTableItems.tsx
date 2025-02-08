@@ -4,7 +4,7 @@ import { columns } from "./colums"
 export function DataTableItems(props: DataTableItemsProps) {
     const { elements } = props
   return (
-    <div className="p-10">
+    <div className="p-4">
         <DataTable columns={columns} data={elements} />
     </div>
   )

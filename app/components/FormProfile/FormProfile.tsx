@@ -65,20 +65,21 @@ export function FormProfile(props: FormProfileProps) {
             name="profileImage"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Profile Image</FormLabel>
+                <FormLabel className="my-4">Profile Image</FormLabel>
                 <FormControl>
                   <div className="flex gap-2 items-center">
                     <Image
                       src={field.value || "/images/DefaultImageProfile.webp"}
                       alt="Image profile"
-                      width={60}
-                      height={60}
-                      className="rounded-full"
+                      width={80}
+                      height={80}
+                      className="rounded-md"
                     />
-                    <div className="w-[200px]">
+                    <div className="flex flex-col items-center">
+                    <div className="w-full">
                       {showUploadPhoto ? (
                         <UploadButton
-                          className="rounded-md text-slate-800 bg-slate-200 mt-3"
+                          className="rounded-md text-white bg-slate-800"
                           {...field}
                           endpoint="profileImage"
                           onClientUploadComplete={(res) => {
@@ -101,8 +102,9 @@ export function FormProfile(props: FormProfileProps) {
                       )}
                     </div>
                     {photoUploaded && (
-                      <p className="text-sm">Image Uploaded!</p>
+                      <p className="text-sm text-center mt-2 text-slate-900 bg-green-600 px-2 py-1 rounded-md">Image Uploaded!</p>
                     )}
+                    </div>
                   </div>
                 </FormControl>
                 <FormMessage />

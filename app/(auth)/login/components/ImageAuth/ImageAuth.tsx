@@ -1,5 +1,5 @@
 export default function ImageAuth() {
   return (
-    <div className="bg-[url('/images/safe.webp')] bg-no-repeat bg-cover bg-center" />
+    <div className="md:block hidden bg-[url('/images/safe.webp')] bg-no-repeat bg-cover bg-center" />
   );
 }

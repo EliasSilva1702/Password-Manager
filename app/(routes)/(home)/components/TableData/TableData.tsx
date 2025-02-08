@@ -8,7 +8,7 @@ export type TableDataProps = {
 export default function TableData(props: TableDataProps) {
     const { elements } = props
   return (
-    <div className="p-10">
+    <div className="md:p-10 p-4">
         <DataTable columns={columns} data={elements}/>
     </div>
   )

@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,13 +15,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
+
 const formSchema = z.object({
   email: z.string().min(2).max(50),
   password: z.string().min(2).max(50),
   username: z.string().min(2).max(50),
 });
+
 export function RegisterForm() {
   const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,7 +34,6 @@ export function RegisterForm() {
     },
   });
 
-  // 2. Define a submit handler.
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const response = await fetch("/api/auth/register", {
@@ -39,13 +42,12 @@ export function RegisterForm() {
         body: JSON.stringify(values),
       });
 
-      const text = await response.text(); // Leer la respuesta
-
+      const text = await response.text();
       console.log("📩 Respuesta del servidor:", response.status, text);
 
       if (response.status === 200) {
         toast({ title: "Successfully registered" });
-        router.push("/");
+        router.push("/login"); // Redirige al login después del registro exitoso
       } else {
         toast({
           title: "Error registering",
@@ -58,6 +60,7 @@ export function RegisterForm() {
       toast({ title: "Network error", variant: "destructive" });
     }
   };
+
   return (
     <Form {...form}>
       <form
@@ -73,7 +76,6 @@ export function RegisterForm() {
               <FormControl>
                 <Input placeholder="Email" {...field} />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
@@ -85,9 +87,8 @@ export function RegisterForm() {
             <FormItem className="text-start">
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="username" {...field} />
+                <Input placeholder="Username" {...field} />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
@@ -101,7 +102,6 @@ export function RegisterForm() {
               <FormControl>
                 <Input placeholder="Your password" {...field} type="password" />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}

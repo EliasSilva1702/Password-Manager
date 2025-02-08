@@ -20,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+          <link rel="icon" href="/images/DefaultImageProfile.webp" />
+        </head>
       <body className={poppins.className}>{children}
         <Toaster />
       </body>

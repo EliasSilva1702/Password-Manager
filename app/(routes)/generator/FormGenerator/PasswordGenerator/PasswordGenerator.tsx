@@ -71,7 +71,7 @@ export function PasswordGenerator(props: PasswordGeneratorProps) {
               onCheckedChange={() => setIsNumberSelected((prev) => !prev)}
             />
             <label
-              htmlFor="numbers"
+              htmlFor="number"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
               Numbers from 0 to 9

@@ -12,7 +12,7 @@ export default async function LoginPage() {
     <div className="grid md:grid-cols-2 h-full min-h-screen overflow-hidden">
       {/* Sección del formulario */}
       <div className="flex justify-center items-center h-full bg-white">
-        <div className="text-center max-w-md p-6">
+        <div className="text-center max-w-md">
           <h1 className="text-blue-500 text-2xl font-semibold mb-2">
             EliasPassword
           </h1>
@@ -20,7 +20,7 @@ export default async function LoginPage() {
           <p className="text-slate-400 text-sm mt-2 mb-6">
             Welcome back, Please enter your details
           </p>
-          <TabsForm />
+          <TabsForm />  
         </div>
       </div>
 

@@ -32,6 +32,7 @@ import { toast } from "@/hooks/use-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { FormAddElementProps } from "./FormAddElements.types";
+import { Label } from "@/components/ui/label";
 export function FormAddElement(props: FormAddElementProps) {
   const { userId, closeDialog } = props;
   const [setshowPassword, setShowPassword] = useState(false);
@@ -231,13 +232,16 @@ export function FormAddElement(props: FormAddElementProps) {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="flex justify-between">
+                <FormLabel className="flex justify-between items-center my-2">
                   Password
+                  <Label className="cursor-pointer flex items-center gap-2 mx-1 bg-slate-200 px-2 py-1 rounded-md"
+                    onClick={generateRandomPassword}
+                  >Generate password
                   <Shuffle
                     className="cursor-pointer"
                     size={15}
-                    onClick={generateRandomPassword}
                   />
+                  </Label>
                 </FormLabel>
                 <FormControl>
                   <div className="relative">

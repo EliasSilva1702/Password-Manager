@@ -13,12 +13,12 @@ export default function UserGenerator(props: UserGeneratorProps) {
         onValueChange={(value) => setUserTypeSelected(value)}
       >
         <div className="flex items-center space-x-2">
-            <RadioGroupItem value="username" id="r2" />
-            <Label htmlFor="r2">Username</Label>
+            <RadioGroupItem value="username" id="r3" />
+            <Label htmlFor="r3">Username</Label>
         </div>
         <div className="flex items-center space-x-2">
-            <RadioGroupItem value="email" id="r1" />
-            <Label htmlFor="r1">Email</Label>
+            <RadioGroupItem value="email" id="r4" />
+            <Label htmlFor="r4">Email</Label>
         </div>
       </RadioGroup>
     </div>
